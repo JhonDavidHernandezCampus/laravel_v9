@@ -81,4 +81,14 @@ Este comando pasa todas las tablas que yo tenga en migrations a la base de datos
 
 ## Interesante
 ->Cada tabla que creemos tiene por asi decirlo un control de versiones, tiene dos metodos up() que es para actualizar y down() que es para regresar a una version anterior
+## Eloquend
 
+Eloquien es la tecnolohia que usaos en laravel para manejar las consultas a la base de datos (es un orm), 
+--Algunas de la funciones de eloquen mas comunes son estas.
+
+Post::get(); -> Trae todos los registros de la base de datos
+Post::frist(); -> Trae el primer registro de la base de datos
+Post::find(id); -> Busca un registro en la base de datos por medio de su id
+Post::latest(); -> Trae todos los registros de la base de datos, y los ordena de forma descendente
+
+adicional, podemos utilizar el método paginate(), para realizar la paginación, solo no nos debemos de incluir en nuestras vistas la propiedad links() para que podamos visualizar los controles de paginación

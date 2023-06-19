@@ -7,11 +7,15 @@
     <h2>esto es lo que el hizo</h2>
     @foreach ( $posts as $post )
     <p>
-        <strong>{{$post['id']}}</strong>
-        <a href="{{ route('post', $post['slug'])}}">{{ $post['title'] }}</a>
+        <strong>{{$post->id}}</strong>
+        <a href="{{ route('post', $post->slug)}}">   {{ $post->title }}  </a><br>
+        <span>{{$post->user->name}}</span>
     </p>
 
     @endforeach
+
+
+
     <h2>esto es lo que yo hice</h2>
     <table>
         <thead>
@@ -24,12 +28,15 @@
         <tbody>
             @foreach ($posts as  $post)
                 <tr>
-                    <td>{{$post['id']}}</td>
-                    <td>{{$post['title']}}</td>
-                    <td>{{$post['slug']}}</td>
+                    <td>{{$post->id}}</td>
+                    <td>{{$post->title}}</td>
+                    <td>{{$post->slug}}</td>
                 </tr>
             @endforeach
         </tbody>
     </table>
+
+{{$posts->links()}}
+
 @endsection
 
